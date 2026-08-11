@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .main {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .form {
+            background: #fff0f5;
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative; /* IMPORTANT FIX */
+        }
+
+        .form h1 {
+            color: #d63384;
+            margin-bottom: 20px;
+        }
+
+        .btn, .btn1 {
+            margin-top: 20px;
+            margin-inline-end: 10px;
+            padding: 12px 40px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #ff4b5c, #ff6f91);
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg, #ff6f91, #ff4b5c);
+            transform: scale(1.05);
+        }
+
+        .btn1 {
+            position: absolute;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="form">
+            <h1>
+                <marquee>Will you be my girlfriend?</marquee>
+            </h1>
+
+            <button class="btn" onclick="sayYes()">Yes</button>
+            <button class="btn1">No</button>
+        </div>
+    </div>
+
+   
+    <script src="backend.js"></script>
+    <script src="server.js"></script>
+</body>
+</html>

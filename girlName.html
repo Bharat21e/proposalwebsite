@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Please accept my proposal</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #form {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        #btn {
+            margin-top: 20px;
+            padding: 12px 40px;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #ff4b5c, #ff6f91);
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #btn:hover {
+            background: linear-gradient(45deg, #ff6f91, #ff4b5c);
+            transform: scale(1.05);
+        }
+
+        #name {
+            background-color: #ff9a9e;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px 20px;
+            border-radius: 20px;
+            border: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="form" onsubmit="return false">
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="button" id="btn" onclick="openform()">Submit</button>
+    </form>
+
+    <script>
+        function openform() {
+            var name = document.getElementById("name").value.trim();
+
+            if (name === "") {
+                alert("Please enter your name");
+                return;
+            }
+
+            // store name
+            localStorage.setItem("username", name);
+
+            // redirect to next page
+            window.location.href = "frontend.html";
+        }
+    </script>
+
+</body>
+
+</html>

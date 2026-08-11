@@ -1,0 +1,5 @@
+first man come in web 
+then he enter there name and email 
+and genrate one link and than that link share to girl
+and then girl enter their name and comme proposal website and clike yes button 
+man enter ther email and name gone server dynamacliy save in server
