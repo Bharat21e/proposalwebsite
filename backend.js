@@ -19,7 +19,10 @@ function moveButton() {
 // YES button
 function sayYes() {
     let username = localStorage.getItem("username");
-
+    if (!navigator.onLine) {
+        alert("check your internet connection ")
+    }
+    else{
     fetch("http://localhost:3000/send-email", {
         method: "POST",
         headers: {
@@ -29,10 +32,12 @@ function sayYes() {
             name: username
         })
     })
-    .then(res => res.json())
-    .then(data => {
-        alert(" thank you accpeting my proposel ❤️");
-         window.location.href = "acept.html";
-    })
-    .catch(err => console.log(err));
+
+        .then(res => res.json())
+        .then(data => {
+            alert(" thank you accpeting my proposel ❤️");
+            window.location.href = "acept.html";
+        })
+        .catch(err => console.log(err));
+    }
 }
