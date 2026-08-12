@@ -46,6 +46,8 @@ transporter.verify((error, success) => {
 // Send email API
 app.post("/send-email", async (req, res) => {
     const { name } = req.body;
+    const {selectdate} =  req.body;
+    const {food} = req.body;
 
     if (!name) {
         return res.status(400).json({
@@ -61,10 +63,11 @@ app.post("/send-email", async (req, res) => {
             from: process.env.USER_EMAIL,
             to: process.env.USER_EMAIL,
             subject: "❤️ Proposal Accepted",
-            text: `Hi Bharat, ${name} accepted your proposal ❤️`
+            text: `Hi Bharat, ${name}  accepted your proposal ❤️  
+             she is ready for date at  ${selectdate} , and she's favraite food is ${food} `
         });
 
-        console.log(`Email sent successfully for ${name}`);
+        console.log(`Email sent successfully`);
 
         res.json({
             success: true,

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Selection</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color:white
+
+        }
+
+        .main {
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            width: 500px;
+            padding: 60px;
+            border-radius: 10px;
+        }
+
+        .foods {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .foods_select img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="box">
+
+            <h2>Select your favourite food</h2>
+
+            <div class="foods" id="selectFood">
+
+                <div class="foods_select" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHL8zlj8NGmmFhNcjwgAv0WfCK-0_ROMpxWkh-OIoog&s=10" alt="food"  class="mommos">
+                </div>
+
+                <div class="foods_select" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHL8zlj8NGmmFhNcjwgAv0WfCK-0_ROMpxWkh-OIoog&s=10" alt="food" class="pizza">
+                </div>
+
+                <div class="foods_select" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHL8zlj8NGmmFhNcjwgAv0WfCK-0_ROMpxWkh-OIoog&s=10" alt="food" class="burgger">
+                </div>
+
+                <div class="foods_select" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHL8zlj8NGmmFhNcjwgAv0WfCK-0_ROMpxWkh-OIoog&s=10" alt="food"class="coffee" >
+                </div>
+
+                <div class="foods_select" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHL8zlj8NGmmFhNcjwgAv0WfCK-0_ROMpxWkh-OIoog&s=10" alt="food" class="noodels">
+                </div>
+
+                <div class="foods_select" >
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHL8zlj8NGmmFhNcjwgAv0WfCK-0_ROMpxWkh-OIoog&s=10" alt="food" class="tea">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+     const SELECTFOOD = document.querySelector("#selectFood");
+
+SELECTFOOD.addEventListener("click", (event) => {
+
+    if (event.target.tagName === "IMG") {
+
+        const value = event.target.className;
+        console.log(value);
+        localStorage.setItem("selectedFood", value);
+
+        window.location.href = "frontend.html";
+    }
+
+});
+    </script>
+</body>
+</html>

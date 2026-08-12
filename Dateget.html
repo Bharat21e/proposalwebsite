@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #fff5f8);
+  }
+
+  .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .sml {
+    width: 100%;
+    max-width: 500px;
+    padding: 35px 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .sml h3 {
+    margin: 0 0 25px;
+    color: #d6336c;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .sml input[type="date"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #f3b6c9;
+    border-radius: 10px;
+    background: #fff;
+    color: #555;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .sml input[type="date"]:focus {
+    border-color: #d6336c;
+    box-shadow: 0 0 0 4px rgba(214, 51, 108, 0.12);
+  }
+
+  @media (max-width: 500px) {
+    .sml {
+      padding: 28px 20px;
+    }
+
+    .sml h3 {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<body>
+  <div class="date">
+    <div class="sml">
+      <h3>Select a date for your free day ❤️</h3>
+      <input type="date" id="select_date">
+      <button type="submit" onclick="openaceptform()">next</button>
+    </div>
+  </div>
+  <script>
+      function  openaceptform(){
+         var date = document.getElementById("select_date").value.trim();
+
+            if (date === "") {
+                alert("Please select date");
+                return;
+            }
+
+            // store name
+            localStorage.setItem("selectdate", date);
+
+            // redirect to next page
+            window.location.href = "favraitfood.html";
+      }
+  </script>
+</body>
+
+</html>

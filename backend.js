@@ -1,5 +1,4 @@
 var noBtn = document.querySelector(".btn1");
-
 // move NO button
 noBtn.addEventListener("mouseover", moveButton);
 
@@ -19,6 +18,8 @@ function moveButton() {
 // YES button
 function sayYes() {
     let username = localStorage.getItem("username");
+    let date = localStorage.getItem("selectdate") ;
+    let food = localStorage.getItem("selectedFood");
     if (!navigator.onLine) {
         alert("check your internet connection ")
     }
@@ -29,7 +30,9 @@ function sayYes() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            name: username
+            name: username,
+            selectdate : date,
+            food : food
         })
     })
 

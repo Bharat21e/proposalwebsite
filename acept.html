@@ -18,7 +18,7 @@
 
         .box {
             background: rgba(255,255,255,0.2);
-            padding: 40px;
+            padding: 5px;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0,0,0,0.2);
         }
@@ -53,9 +53,11 @@
 
     <script>
         let username = localStorage.getItem("username");
+            let date = localStorage.getItem("selectdate") ;
+            let food = localStorage.getItem("selectedFood");
 
         document.getElementById("msg").innerText =
-            "Thank you " + username + " for accepting ❤️";
+            "Thank you " + username + " for accepting ❤️ my proposel we will go for date at "+date+"thanks to share your favrate food " +food;
     </script>
 
 </body>
